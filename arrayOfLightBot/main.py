@@ -1,10 +1,14 @@
+from logging import shutdown
 import random
+import threading
 from typing import Text
+from telegram import update
 from telegram.ext import Updater,Filters , InlineQueryHandler, CommandHandler, MessageHandler
 import telegram
 import requests
 import re
 import time
+from telegram.ext import updater
 from telegram.ext.filters import MessageFilter
 
 token = "1376164311:AAEQ51LqY00cdiopTZlRU2qqHyS9sfbWG6M"
@@ -57,13 +61,14 @@ def reply(update, context):
 def start(update, context):
     chat_id = update.message.chat_id
     f = open("./start.txt")
-    context.bot.send_message(chat_id=chat_id, text=f.read());
+    context.bot.send_message(chat_id=chat_id, text=f.read())
 
 def end(update, context):
-    chat_id = update.message.chat_id
-    context.bot.send_message(chat_id=chat_id,text='Thank you. See you later.')
-    return CommandHandler.END
+    threading.Thread(target=shutdown).start()
 
+def shutdown():
+    updater.stop()
+    updater.is_idle = False
 
 def main():
     updater = Updater(token)
