@@ -1,14 +1,18 @@
 //Filename: src/pages/login/login.jsx
 import React, {useState, useEffect} from "react";
-import { Card, Form, Button } from "react-bootstrap";
+
+import { Button } from "react-bootstrap";
 import JALogo from './img/JALogo.png';
-import { BeatLoader } from 'react-spinners'
-//import { API_URL, fetchHeaders } from "../../utils/types";
+// import { BeatLoader } from 'react-spinners'
 //api fetching tools once backend service set up
+//import { DashboardContext} from "../../context/DashboardContext";
 import { getToken, setToken } from "./handleToken";
+import {API_URL}from '../../consts/config';
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./Login.css";
+import { config } from "./handleToken";
+import axios from "axios"
 
 
 const Login = props => {
@@ -26,48 +30,49 @@ const Login = props => {
 		
 		const endPoint = '/login';
 		const userData = {
-				email: username,
-				password: password
+			email: username,
+			password: password
 		};
+
 		
 		try {
-			const result = await axios.post(endpoint, userData);
-			const clientToken = JSON.parse(result).response;
+			const result = await axios.post(endPoint, userData);
+			const clientToken = result.data.token;
 			setToken(clientToken);
 			setLoginSuccess(true);
+			this.props.history.push("/admin/dashboard");
 		} catch (error) {
-			console.log (error)
-			const jsonError = JSON.parse(error)
-			alertCentral.error (jsonError.error || error)
+			console.error (error)
 		}
 		setIsLoading(false)      
-		setLoginSuccess(true)
 	};
 
 	return (
 		<div className="login-page" onKeyPress={handleLoginKeyPress}>
-			<Card className="login-card">
-				<Card.Img src={JALogo} className="login-logo"/>
-				<Card.Title className="login-title">Sign In</Card.Title>
-				<Card.Text className="login-prompt">Username</Card.Text>
-				<Form.Control type="text" className="login-form" onChange={e => setUsername(e.target.value)} name="username"></Form.Control>
-				<Card.Text className="login-prompt">Password</Card.Text>
-				<Form.Control type="password" className="login-form" onChange={e => setPassword(e.target.value)} name="password"></Form.Control>
+			<div className="login-div card">
+				<div src={JALogo} className="login-logo card-img-top"/>
+				<div class="card-body">
+				<div className="login-title card-titel">Sign In</div>
+				<div className="login-prompt card-text">Username</div>
+				<input type="text" className="login-form" onChange={e => setUsername(e.target.value)} name="username"></input>
+				<div className="login-prompt card-text">Password</div>
+				<input type="password" className="login-form" onChange={e => setPassword(e.target.value)} name="password"></input>
 				
 				<Button type="submit" className="login-button" onClick={login}>
 					Submit
 				</Button>
 
-				<div className="loader">
+				{/* <div className="loader">
 					<BeatLoader 
 						loading={isLoading} 
 						color='rgb(3, 67, 110)'
 						size='18'                     
 					/>
+				</div> */}
+				<div className="login-forget-password card-text">Forget Password</div>
+				<div className="login-sign-up card-text">Sign Up</div>
 				</div>
-				<Card.Text className="login-forget-password">Forget Password</Card.Text>
-				<Card.Text className="login-sign-up">Sign Up</Card.Text>
-			</Card>
+			</div>
 		</div>
 	);
 };

@@ -10,6 +10,7 @@ import Notifications from "views/Notifications.jsx";
 import Badges from "views/Badges";
 import Friends from "views/Friends";
 import Submission from "views/Submission";
+import Login from "pages/Login/Login";
 const dashboardRoutes = [
   {
     path: "/dashboard",
