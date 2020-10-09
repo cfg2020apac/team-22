@@ -266,14 +266,18 @@ var style = {
 // // // For tables
 // //
 //
-const thArray = ["ID", "Name", "Salary", "Country", "City"];
+const thArray = ["Rank", "Player","Creativity ","Submission", " Total Score"];
 const tdArray = [
-  ["1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
-  ["2", "Minerva Hooper", "$23,789", "Curaçao", "Sinaai-Waas"],
-  ["3", "Sage Rodriguez", "$56,142", "Netherlands", "Baileux"],
-  ["4", "Philip Chaney", "$38,735", "Korea, South", "Overland Park"],
-  ["5", "Doris Greene", "$63,542", "Malawi", "Feldkirchen in Kärnten"],
-  ["6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
+  ["1", "Chan Tai Man","2182","7380", "9562"],
+  ["2", "Yung Siu Him","2980","5918", "8898"],
+  ["3", "Chan Tai Yung","2763","5110", "7873"],
+  ["4", "Li Tsz Ching", "1763","4809","6572"],
+  ["5", "Chan Wing Sze", "1331","4000","5331"],
+  ["6", "Lau Man Wai", "986","2500","3486"],
+  ["7", "Chan Hei Sheung", "500","2500","3000"],
+  ["8", "Law Kit Ming", "986","1500","2486"],
+  ["9", "Chan Yu Wing", "696","1590","2286"],
+  ["10", "Pang Hang Wing", "512","768","1280"]
 ];
 
 //
