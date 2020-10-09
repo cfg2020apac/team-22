@@ -603,15 +603,15 @@ var legendBar = {
   types: ["info", "danger"]
 };
 var courseTitle = {
-  1:"Shopify",
-  2:"Drawing",
-  3:"Game Design",
-  4:"Cybersecurity",
-  5:"Memorization",
-  6:"Focus",
-  7:"Power BI",
-  8:"Python",
-  9:"Angular"
+  1:"JA Company Programme",
+  2:"JA International Trade Challenge Workshop",
+  3:"JA Innovation Camp",
+  4:"JA Career Dimensions 4.0",
+  5:"JA Leaders Dialogue",
+  6:"JA Job Shadowing",
+  7:"JA Finance For Future",
+  8:"JA Personal Spending 101",
+  9:"JA Planning with Purpose"
 }
 module.exports = {
   style, // For notifications (App container and Notifications view)
