@@ -20,7 +20,8 @@
     "react-router-dom": "5.0.0",
     "react-scripts": "3.0.0",
     "react-toggle": "4.0.2",
-    "react-trello": "^2.2.8"
+    "react-trello": "^2.2.8",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "@types/googlemaps": "3.30.19",
