@@ -106,12 +106,16 @@ function Courses (props){
                     title="Course Title"
                   />
                   <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom>
+                    <Typography  style={{marginBottom:"1rem"}} gutterBottom>
                       <div className={classes.courseTitle}>{courseTitle[card + 1]}</div>
                     </Typography>
-                    <Typography>
-                    <div className={classes.courseDescription}>This is a great course!</div>
-                      
+                    <Typography style={{marginBottom:"1rem"}}>
+                    <a href="https://jpmchase.zoom.us/j/94356920988" className={classes.courseDescription}>Zoom Link</a>
+      
+                    </Typography>
+                    <Typography style={{marginBottom: "1.5rem"}}>
+                    <a href="https://t.me/jahongkong" className={classes.courseDescription}>Telegram Channel</a>
+      
                     </Typography>
                     <Typography>
                     <ProgressBar now={courseProgress[index - 1]} label={`${courseProgress[index - 1]}%`} />
