@@ -618,6 +618,39 @@ var courseTitle = {
   7:"JA Finance For Future",
   8:"JA Personal Spending 101",
   9:"JA Planning with Purpose"
+};
+var friendList = {
+  1:"Chan Tai Man",
+  2:"Chan Siu Ming",
+  3:"Lee Tsz Ching",
+  4:"Chan Yu Wing",
+  5:"Chan Wing Sze",
+  6:"Au Yeung Fung",
+  7:"Ko Wing",
+  8:"Yau Tsz Him",
+  9:"Yiu Tsz Kin"
+};
+var username = {
+  1: "@taiman123",
+  2: "@siuming88",
+  3: "@tszching02",
+  4: "@chanwing2003",
+  5: "@wing1102",
+  6: "@auyeung250",
+  7: "@kowingbts123",
+  8: "@tayloryau085",
+  9: "@yiutszkin88",
+};
+var userdescription = {
+  1: "Hello, I'm the CEO of the Student Company Flash. Open to discover the potential of business together!",
+  2: "Hi! I am Siu Ming. Nice to meet you!",
+  3: "Hi! I am Ching. Nice to meet you too!",
+  4: "Hi! I am Yu Wing, the CFO of the firm. Feel free to find me to discuss sth related to finance.",
+  5: "Hi there, this is Wing Sze!",
+  6: "Message me if you are a fan of LoL",
+  7: "Text me in case you wanna find a study partner!",
+  8: "I come from class 4E and I am part of the operation department!",
+  9: "I come from class 4E as well but I work in the finance department!",
 }
 module.exports = {
   style, // For notifications (App container and Notifications view)
@@ -636,5 +669,8 @@ module.exports = {
   studentBar,
   studentDataBar,
   legendBar, // For charts (Dashboard view)
-  courseTitle
+  courseTitle,
+  friendList,
+  username,
+  userdescription
 };
