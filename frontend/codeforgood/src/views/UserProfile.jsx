@@ -70,7 +70,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Company",
-                          value: "Creative Code Inc.",
+                          value: "JPMorgan Chase & Co.",
                           disabled: true
                         },
                         {
@@ -156,7 +156,7 @@ class UserProfile extends Component {
                             componentClass="textarea"
                             bsClass="form-control"
                             placeholder="Here can be your description"
-                            defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
+                            defaultValue="Hi, This is Pavel! "
                           />
                         </FormGroup>
                       </Col>
@@ -171,32 +171,19 @@ class UserProfile extends Component {
             </Col>
             <Col md={4}>
               <UserCard
-                bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
+              
+                bgImage="https://res.cloudinary.com/ideation/image/upload/w_870/cy7q9qguz4siocn9tdof.png?fit=crop&fm=jpg&h=300&q=75&w=400"
                 avatar={avatar}
                 name={`${userData.firstName} ${userData.lastName}`}
                 userName={`${userData.username}`}
                 description={
                   <span>
-                    "Lamborghini Mercy
+                    "I am a guy who is passoniate about coding.
                     <br />
-                    Your chick she so thirsty
-                    <br />
-                    I'm in that two seat Lambo"
+                    Drop me a message to share your thoughts on coding!
                   </span>
                 }
-                socials={
-                  <div>
-                    <Button simple>
-                      <i class="fa fa-facebook-square" />
-                    </Button>
-                    <Button simple>
-                      <i class="fa fa-twitter" />
-                    </Button>
-                    <Button simple>
-                      <i class="fa fa-google-plus-square" />
-                    </Button>
-                  </div>
-                }
+                
               />
             </Col>
           </Row>
