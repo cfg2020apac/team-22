@@ -17,7 +17,6 @@ const Login = props => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
-    const fakeAPI_URL = 'http://google.com';
 	const { loginSuccess, setLoginSuccess, handleConnectWA } = React.useContext(LoginContext)
 	const handleLoginKeyPress = (event) => {
 		if(event.key === 'Enter'){
@@ -27,11 +26,14 @@ const Login = props => {
 		const login = async () => {
         setIsLoading(true)
 		
-		const endPoint = fakeAPI_URL + '/user/login';
-		const loginJSON = {_username: username, _password: password};
-		/*
+		const endPoint = '/login';
+		const userData = {
+				email: username,
+				password: password
+		};
+		
 		try {
-			const result = await Fetch(endPoint, {method: 'POST', headers: fetchHeaders, body: JSON.stringify(loginJSON)})
+			const result = await axios.post(endpoint, userData);
 			const clientToken = JSON.parse(result).response;
 			setToken(clientToken);
 			setLoginSuccess(true);
@@ -40,7 +42,6 @@ const Login = props => {
 			const jsonError = JSON.parse(error)
 			alertCentral.error (jsonError.error || error)
 		}
-        */
 		setIsLoading(false)      
 		setLoginSuccess(true)
 	};

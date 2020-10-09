@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 export const setToken = token => {
-    localStorage.setItem('ClientToken',token)
+    localStorage.setItem('ClientToken',`Bearer ${token}`)
 
 }
 export const removeToken = () => {
