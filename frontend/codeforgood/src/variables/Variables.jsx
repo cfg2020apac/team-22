@@ -508,24 +508,24 @@ var legendPie = {
 // Data for Line Chart
 var dataSales = {
   labels: [
-    "9:00AM",
-    "12:00AM",
-    "3:00PM",
-    "6:00PM",
-    "9:00PM",
-    "12:00PM",
-    "3:00AM",
-    "6:00AM"
+    "Aug 28",
+    "Sep 3",
+    "Sep 9",
+    "Sep 15",
+    "Sep 21",
+    "Sep 27",
+    "Oct 3",
+    "Oct9"
   ],
   series: [
-    [287, 385, 490, 492, 554, 586, 698, 695],
-    [67, 152, 143, 240, 287, 335, 435, 437],
-    [23, 113, 67, 108, 190, 239, 307, 308]
+    [28, 38, 49, 49, 54, 86, 68, 65],
+    [13, 15, 14, 24, 28, 33, 43, 43],
+    [24, 11, 67, 88, 40, 30, 45, 60]
   ]
 };
 var optionsSales = {
   low: 0,
-  high: 800,
+  high: 125,
   showArea: false,
   height: "245px",
   axisX: {
@@ -545,7 +545,7 @@ var responsiveSales = [
     {
       axisX: {
         labelInterpolationFnc: function(value) {
-          return value[0];
+          return value;
         }
       }
     }
@@ -559,6 +559,8 @@ var legendSales = {
 // Data for Bar Chart
 var dataBar = {
   labels: [
+    "Nov",
+    "Dec",
     "Jan",
     "Feb",
     "Mar",
@@ -569,8 +571,7 @@ var dataBar = {
     "Aug",
     "Sep",
     "Oct",
-    "Nov",
-    "Dec"
+
   ],
   series: [
     [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
