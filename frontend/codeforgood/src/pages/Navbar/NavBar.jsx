@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 const NavBar = props => {
     return (
-        <div className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: '#5d5a5a', color: '#FFFFFF'}}>
+        <div className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: '#FFFFFF'}}>
             <a className="navbar-brand" href="#">Navbar</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
