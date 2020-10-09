@@ -47,7 +47,8 @@ class UserProfile extends Component {
   }
 
   async updateUserProfile(){
-    await axios.post('/user', this.state.userData, config);
+    console.log(this.state.userData)
+    let res = await axios.post('/user', this.state.userData, config);
     await this.getUser();
   }
 
@@ -78,14 +79,16 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Username",
-                          defaultValue: userData.username
+                          defaultValue: userData.username,
+                          onChange: (e)=>{this.setState({username: e.target.value})}
                         },
                         {
                           label: "Email address",
                           type: "email",
                           bsClass: "form-control",
                           placeholder: "Email",
-                          defaultValue: userData.email
+                          defaultValue: userData.email,
+                          onChange: (e)=>{this.setState({email: e.target.value})}
                         }
                       ]}
                     />
@@ -97,14 +100,16 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "First name",
-                          defaultValue: userData.firstName
+                          defaultValue: userData.firstName,
+                          onChange: (e)=>{this.setState({firstName: e.target.value})}
                         },
                         {
                           label: "Last name",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Last name",
-                          defaultValue: userData.lastName
+                          defaultValue: userData.lastName,
+                          onChange: (e)=>{this.setState({lastName: e.target.value})}
                         }
                       ]}
                     />
@@ -136,7 +141,8 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Country",
-                          defaultValue: userData.country
+                          defaultValue: userData.country,
+                          onChange: (e)=>{this.setState({country: e.target.value})}
                         },
                         {
                           label: "Postal Code",
