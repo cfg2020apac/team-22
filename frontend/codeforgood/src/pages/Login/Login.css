@@ -9,7 +9,7 @@
 	top: 0;
 	bottom: 0;
 }
-.login-card.card {
+.login-div {
 	display: flex;
 	flex-direction: column;
 	border-radius: 44px;
@@ -17,11 +17,12 @@
 	background-color: white;
 	padding: 2rem 2rem;
 	align-self: center;
+	justify-content: center;
 }
 
 .login-logo {
 	/* ENSURE Logo is not stretched */
-	width: 23%;
+	width: 50%;
 	margin: 5% auto 5% auto;
 }
 
@@ -41,16 +42,21 @@
 	background:#f0f8ff !important;
 	/*background-color: #f7fafc;*/
 	border: 0px;
-	height: 8%;
+	height: 30%;
+	width: 100%;
 	margin-bottom: 8%;
 }
+
 .login-button{
 	border-radius:16px; 
-	background-color: #374e65;
+	background-color: #1192c4;
 	font-size: 18px;
 	font-weight: 700;
 	margin-top: 10px;
+	margin-bottom: 10px;
+	align-self:center;
 }
+
 .login-forget-password {
 	color: #09a391;
 	font-size: 16px;

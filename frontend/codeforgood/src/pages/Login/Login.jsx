@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import JALogo from './img/JALogo.png';
 
 import "bootstrap/dist/css/bootstrap.css";
+import "../../assets/sass/light-bootstrap-dashboard-react.scss?v=1.3.0";
 import "./Login.css";
 import axios from "axios"
 import { useHistory } from "react-router-dom";
@@ -31,7 +32,6 @@ const Login = props => {
 			password: password
 		};
 
-		
 		try {
 			const result = await axios.post(endPoint, userData);
 			if (result.data.token){
@@ -49,27 +49,28 @@ const Login = props => {
 	return (
 		<div className="login-page" onKeyPress={handleLoginKeyPress}>
 			<div className="login-div card">
-				<div src={JALogo} className="login-logo card-img-top"/>
-				<div class="card-body">
-				<div className="login-title card-titel">Sign In</div>
-				<div className="login-prompt card-text">Username</div>
-				<input type="text" className="login-form" onChange={e => setUsername(e.target.value)} name="username"></input>
-				<div className="login-prompt card-text">Password</div>
-				<input type="password" className="login-form" onChange={e => setPassword(e.target.value)} name="password"></input>
-				
-				<Button type="submit" className="login-button" onClick={login}>
-					Submit
-				</Button>
+				<img src={JALogo} className="login-logo"/>
+				<div className="card-body">
+					<h4 className="login-title card-titel">Sign In</h4>
+					<h5 className="login-prompt card-text">Username</h5>
+					<input type="text" className="login-form" onChange={e => setUsername(e.target.value)} name="username" fullwidth></input>
+					<h5 className="login-prompt card-text">Password</h5>
+					<input type="password" className="login-form" onChange={e => setPassword(e.target.value)} name="password" fullwidth></input>
+					<div className="d-flex justify-content-center">
+						<Button type="submit" className="login-button" disabled={isLoading} onClick={login}>
+							Submit
+						</Button>
+					</div>
 
-				{/* <div className="loader">
-					<BeatLoader 
-						loading={isLoading} 
-						color='rgb(3, 67, 110)'
-						size='18'                     
-					/>
-				</div> */}
-				<div className="login-forget-password card-text">Forget Password</div>
-				<div className="login-sign-up card-text">Sign Up</div>
+					{/* <div className="loader">
+						<BeatLoader 
+							loading={isLoading} 
+							color='rgb(3, 67, 110)'
+							size='18'                     
+						/>
+					</div> */}
+					<div className="login-forget-password card-text">Forget Password</div>
+					<div className="login-sign-up card-text">Sign Up</div>
 				</div>
 			</div>
 		</div>

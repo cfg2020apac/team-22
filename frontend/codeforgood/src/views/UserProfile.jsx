@@ -23,22 +23,36 @@ class UserProfile extends Component {
     super(props);
     this.state = {
       userData : {
-        country: "",
-        email: "",
+        firstName: "",
         lastName:"",
-        phoneNumber:"",
-        username:""
+        email: "",
+        phoneNumber: "",
+        country: "",
+        password: "",
+        confirmPassword: "",
+        username: ""
       }
     }
   }
 
   async componentDidMount(){
+    await this.getUser();
+  }
+
+  async getUser(){
     let res = await axios.get('/user', config);
     this.setState({
-      userData: res.data
+      userData: {...this.state.userData,...res.data.userCredentials}
     })
   }
+
+  async updateUserProfile(){
+    await axios.post('/user', this.state.userData, config);
+    await this.getUser();
+  }
+
   render() {
+    var userData = this.state.userData;
     return (
       <div className="content">
         <Grid fluid>
@@ -56,7 +70,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Company",
-                          defaultValue: "Creative Code Inc.",
+                          value: "Creative Code Inc.",
                           disabled: true
                         },
                         {
@@ -64,13 +78,14 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Username",
-                          defaultValue: "michael23"
+                          defaultValue: userData.username
                         },
                         {
                           label: "Email address",
                           type: "email",
                           bsClass: "form-control",
-                          placeholder: "Email"
+                          placeholder: "Email",
+                          defaultValue: userData.email
                         }
                       ]}
                     />
@@ -82,14 +97,14 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "First name",
-                          defaultValue: "Mike"
+                          defaultValue: userData.firstName
                         },
                         {
                           label: "Last name",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Last name",
-                          defaultValue: "Andrew"
+                          defaultValue: userData.lastName
                         }
                       ]}
                     />
@@ -97,10 +112,10 @@ class UserProfile extends Component {
                       ncols={["col-md-12"]}
                       properties={[
                         {
-                          label: "Adress",
+                          label: "Address",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Home Adress",
+                          placeholder: "Home Address",
                           defaultValue:
                             "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
                         }
@@ -114,14 +129,14 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "City",
-                          defaultValue: "Mike"
+                          defaultValue: "Hong Kong"
                         },
                         {
                           label: "Country",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Country",
-                          defaultValue: "Andrew"
+                          defaultValue: userData.country
                         },
                         {
                           label: "Postal Code",
@@ -146,7 +161,7 @@ class UserProfile extends Component {
                         </FormGroup>
                       </Col>
                     </Row>
-                    <Button bsStyle="info" pullRight fill type="submit">
+                    <Button bsStyle="info" pullRight fill onClick={()=>this.updateUserProfile()}>
                       Update Profile
                     </Button>
                     <div className="clearfix" />
@@ -158,8 +173,8 @@ class UserProfile extends Component {
               <UserCard
                 bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
                 avatar={avatar}
-                name="Mike Andrew"
-                userName="michael24"
+                name={`${userData.firstName} ${userData.lastName}`}
+                userName={`${userData.username}`}
                 description={
                   <span>
                     "Lamborghini Mercy
@@ -172,13 +187,13 @@ class UserProfile extends Component {
                 socials={
                   <div>
                     <Button simple>
-                      <i className="fa fa-facebook-square" />
+                      <i class="fa fa-facebook-square" />
                     </Button>
                     <Button simple>
-                      <i className="fa fa-twitter" />
+                      <i class="fa fa-twitter" />
                     </Button>
                     <Button simple>
-                      <i className="fa fa-google-plus-square" />
+                      <i class="fa fa-google-plus-square" />
                     </Button>
                   </div>
                 }
