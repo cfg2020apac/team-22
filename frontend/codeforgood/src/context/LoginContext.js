@@ -1,8 +1,7 @@
-/*
+
 import React, { useState, useEffect, useContext } from 'react'
-import { getToken, setToken, removeToken } from '../pages/login/handleToken'
+import { getToken, setToken, removeToken } from '../pages/Login/handleToken'
 //import { Fetch, fetchData, HTTPAPI_URL } from '../utils/fetch';
-import { DashboardContext } from './DashboardContext';
 export const LoginContext = React.createContext({
     loginSuccess: false,
     myName: '',
@@ -24,6 +23,7 @@ const LoginProvider = function (props) {
         setMyRole('Admin');
     }
     async function handleConnectWA(){
+        /*
         fetchData('/', { timeout: 30000 }, 'GET')
             .then(async (text) => {
                 const json = JSON.parse(text);
@@ -74,7 +74,8 @@ const LoginProvider = function (props) {
                 console.log(err)
             })
         //start new connection:
-
+            */
+           fakeHandleConnectWA();
     };
 
     const handleLogoutDashboard = () => {
@@ -83,6 +84,7 @@ const LoginProvider = function (props) {
         setLoginSuccess(false);
     }
     const handleLogoutWA = () => {
+        /*
         fetchData('/close').then(
             fetchData('/').then(
                 data => {
@@ -90,6 +92,7 @@ const LoginProvider = function (props) {
                 }
             )
         )
+        */
     }
     return (
         <LoginContext.Provider value={{
@@ -107,4 +110,3 @@ const LoginProvider = function (props) {
     )
 }
 export default LoginProvider;
-*/

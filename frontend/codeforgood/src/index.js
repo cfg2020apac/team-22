@@ -2,12 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import LoginProvider from './context/LoginContext';
 import * as serviceWorker from './serviceWorker';
-
+function Index(props){
+  return (
+    <>
+    <LoginProvider>
+      <App/>
+    </LoginProvider>
+  </>
+  )
+}
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Index />,
   document.getElementById('root')
 );
 

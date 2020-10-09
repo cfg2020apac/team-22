@@ -10,7 +10,7 @@ import { LoginContext } from "../../context/LoginContext";
 import { getToken, setToken } from "./handleToken";
 
 import "bootstrap/dist/css/bootstrap.css";
-import "./login.css";
+import "./Login.css";
 
 
 const Login = props => {
