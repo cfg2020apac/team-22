@@ -30,7 +30,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import { Grid, Row, Col } from "react-bootstrap";
+import { Grid, Row, Col, ProgressBar } from "react-bootstrap";
 import Card from "components/Card/Card.jsx";
 import {courseTitle} from '../variables/Variables';
 import courseLogo from '../assets/img/courses/courseLogo';
@@ -60,6 +60,12 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     flexGrow: 1,
   },
+  courseTitle: {
+    fontSize: '2rem'
+  },
+  courseDescription: {
+    fontSize: '1.5rem'
+  },
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
@@ -67,8 +73,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const courseProgress = [20,90,85,65,23,17,67,93,70];
 function Courses (props){
   var classes = useStyles();
+  const handleViewCourse = (e) => {
+    console.log("view courses")
+  };
+  const handleEditCourse = (e) => {
+    console.log("edit courses")
+  }
+  const handleDeleteCourse = (e) => {
+    console.log("delete course")
+  }
     return (
       <div className="content">
         <Grid fluid>
@@ -86,20 +102,28 @@ function Courses (props){
                     title="Course Title"
                   />
                   <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {courseTitle[card + 1]}
+                    <Typography gutterBottom>
+                      <div className={classes.courseTitle}>{courseTitle[card + 1]}</div>
                     </Typography>
                     <Typography>
-                      This is a great course!
+                    <div className={classes.courseDescription}>This is a great course!</div>
+                      
+                    </Typography>
+                    <Typography>
+                    <ProgressBar now={courseProgress[index - 1]} label={`${courseProgress[index - 1]}%`} />
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
-                      View
+                    <Button size="large" color="primary">
+                      <div style={{fontSize: '1.5rem'}} onClick={handleViewCourse}>View</div>
                     </Button>
-                    <Button size="small" color="primary">
-                      Edit
+                    <Button size="large" color="primary">
+                    <div style={{fontSize: '1.5rem'}} onClick={{handleEditCourse}}>Edit</div>
                     </Button>
+                    <Button size="large" color="warning">
+                    <div style={{fontSize: '1.5rem'}} onClick={{handleDeleteCourse}}>Delete</div>
+                    </Button>
+
                   </CardActions>
                 </MaterialUICard>
               </MaterialUIGrid>
