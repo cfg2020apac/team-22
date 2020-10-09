@@ -14,21 +14,21 @@ const dashboardRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    icon: "pe-7s-graph",
+    icon: "pe-7s-notebook",
     component: Dashboard,
     layout: "/admin"
   },
   {
     path: "/data",
     name: "Data",
-    icon: "pe-7s-graph2",
+    icon: "pe-7s-graph",
     component: Data,
     layout: "/admin"
   },
   {
     path: "/badges",
     name: "Badges",
-    icon: "pe-7s-user",
+    icon: "pe-7s-diamond",
     component: Badges,
     layout: "/admin"
   },
@@ -42,14 +42,14 @@ const dashboardRoutes = [
   {
     path: "/friends",
     name: "Friends",
-    icon: "pe-7s-note2",
+    icon: "pe-7s-smile",
     component: Friends,
     layout: "/admin"
   },
   {
     path: "/table",
     name: "Leaderboard",
-    icon: "pe-7s-note2",
+    icon: "pe-7s-rocket",
     component: TableList,
     layout: "/admin"
   },
