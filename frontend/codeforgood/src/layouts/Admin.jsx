@@ -173,7 +173,7 @@ class Admin extends Component {
   render() {
     return (
       <div className="wrapper">
-        {/*<NavBar/>*/}
+        <NavBar/>
         <NotificationSystem ref="notificationSystem" style={style} />
         <Sidebar {...this.props} routes={routes} image={this.state.image}
         color={this.state.color}

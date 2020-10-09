@@ -21,9 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="eafc393a-4bed-4e4a-a779-44e74e8a8a6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/codeforgood/src/components/Navbars/AdminNavbarLinks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/codeforgood/src/components/Navbars/AdminNavbarLinks.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/codeforgood/src/layouts/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/codeforgood/src/layouts/Admin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/codeforgood/src/pages/PostLogin/PostLogin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/codeforgood/src/pages/PostLogin/PostLogin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/codeforgood/src/views/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/codeforgood/src/views/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/codeforgood/src/pages/Navbar/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/codeforgood/src/pages/Navbar/NavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/codeforgood/src/pages/Navbar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/codeforgood/src/pages/Navbar/NavBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +52,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/codeforgood/src/views" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Users\Jonathan\Documents\Git\cfg-team-22\frontend\codeforgood\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -83,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602223310163</updated>
       <workItem from="1602223312345" duration="1391000" />
-      <workItem from="1602257325293" duration="1670000" />
+      <workItem from="1602257325293" duration="5079000" />
     </task>
     <servers />
   </component>
@@ -123,9 +125,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="385" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602255682884" />
-    <state x="479" y="81" width="554" height="598" key="find.popup" timestamp="1602257805291">
+    <state x="479" y="81" width="554" height="598" key="find.popup" timestamp="1602262461157">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="479" y="81" width="554" height="598" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1602257805291" />
+    <state x="479" y="81" width="554" height="598" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1602262461157" />
   </component>
 </project>

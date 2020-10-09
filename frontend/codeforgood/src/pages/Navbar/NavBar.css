@@ -3,3 +3,11 @@
     width: 23%;
     margin: 5% auto 5% auto;
 }
+
+.circle {
+    height: 80px;
+    width: 80px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: inline-block;
+}
