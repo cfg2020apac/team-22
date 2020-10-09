@@ -7,7 +7,7 @@ export const LoginContext = React.createContext({
     myName: '',
     myRole: '',
     handleConnectWA: () => { },
-    //setLoginSuccess: () => { },
+    setLoginSuccess: () => { },
     //handleLogout: () => { }
 })
 
@@ -101,7 +101,7 @@ const LoginProvider = function (props) {
             myRole: myRole,
             //handleConnectWA: handleConnectWA,
             //handleConnectWA: fakeHandleConnectWA,
-            //setLoginSuccess: setLoginSuccess,
+            setLoginSuccess: setLoginSuccess,
             //handleLogoutDashboard: handleLogoutDashboard,
             //handleLogoutWA: handleLogoutWA
         }}>

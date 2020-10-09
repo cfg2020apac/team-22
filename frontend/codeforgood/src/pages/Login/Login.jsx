@@ -42,7 +42,8 @@ const Login = props => {
 		}
         */
 		setIsLoading(false)      
-    };
+		setLoginSuccess(true)
+	};
 
 	return (
 		<div className="login-page" onKeyPress={handleLoginKeyPress}>
@@ -66,6 +67,7 @@ const Login = props => {
 					/>
 				</div>
 				<Card.Text className="login-forget-password">Forget Password</Card.Text>
+				<Card.Text className="login-sign-up">Sign Up</Card.Text>
 			</Card>
 		</div>
 	);

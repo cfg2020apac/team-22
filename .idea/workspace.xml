@@ -20,9 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eafc393a-4bed-4e4a-a779-44e74e8a8a6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/codeforgood/src/assets/img/badges/award.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/codeforgood/src/assets/img/badges/awards.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/codeforgood/src/assets/img/badges/badge.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/codeforgood/src/assets/img/badges/diploma.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/codeforgood/src/assets/img/badges/laurel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/codeforgood/src/assets/img/badges/medal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/codeforgood/src/assets/img/badges/music-award.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/codeforgood/src/assets/img/badges/trophy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/codeforgood/src/views/Badges.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/codeforgood/src/pages/Navbar/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/codeforgood/src/pages/Navbar/NavBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/codeforgood/src/pages/Navbar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/codeforgood/src/pages/Navbar/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/codeforgood/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/codeforgood/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +55,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/codeforgood/src/pages/Navbar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/codeforgood/src/views" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Jonathan\Documents\Git\cfg-team-22\frontend\codeforgood\src\pages\Navbar" />
+      <recent name="C:\Users\Jonathan\Documents\Git\cfg-team-22\frontend\codeforgood\src\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -101,10 +109,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602244488808">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602244016881">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602244488808" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602244016881" />
     <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1602224063740">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -121,9 +129,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602224063740" />
-    <state x="479" y="81" width="554" height="598" key="find.popup" timestamp="1602235507413">
+    <state x="479" y="81" width="554" height="598" key="find.popup" timestamp="1602254438328">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="479" y="81" width="554" height="598" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1602235507413" />
+    <state x="479" y="81" width="554" height="598" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1602254438328" />
   </component>
 </project>
