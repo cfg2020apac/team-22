@@ -597,7 +597,17 @@ var legendBar = {
   names: ["Tesla Model S", "BMW 5 Series"],
   types: ["info", "danger"]
 };
-
+var courseTitle = {
+  1:"Shopify",
+  2:"Drawing",
+  3:"Game Design",
+  4:"Cybersecurity",
+  5:"Memorization",
+  6:"Focus",
+  7:"Power BI",
+  8:"Python",
+  9:"Angular"
+}
 module.exports = {
   style, // For notifications (App container and Notifications view)
   thArray,
@@ -612,5 +622,6 @@ module.exports = {
   dataBar,
   optionsBar,
   responsiveBar,
-  legendBar // For charts (Dashboard view)
+  legendBar, // For charts (Dashboard view)
+  courseTitle
 };
