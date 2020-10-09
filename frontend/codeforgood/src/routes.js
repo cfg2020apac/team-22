@@ -9,6 +9,7 @@ import Maps from "views/Maps.jsx";
 import Notifications from "views/Notifications.jsx";
 import Upgrade from "views/Upgrade.jsx";
 import Badges from "views/Badges";
+import Friends from "views/Friends";
 
 const dashboardRoutes = [
   {
@@ -37,6 +38,13 @@ const dashboardRoutes = [
     name: "User Profile (Backup)",
     icon: "pe-7s-user",
     component: UserProfile,
+    layout: "/admin"
+  },
+  {
+    path: "/friends",
+    name: "Friends",
+    icon: "pe-7s-note2",
+    component: Friends,
     layout: "/admin"
   },
   {
