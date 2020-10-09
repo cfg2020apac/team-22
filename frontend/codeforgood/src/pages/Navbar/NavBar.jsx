@@ -1,11 +1,16 @@
 import React, {useState, useEffect} from "react";
 
 import "bootstrap/dist/css/bootstrap.css";
+import {Card} from "react-bootstrap";
+import JALogo from './img/JALogo.png';
 
 const NavBar = props => {
     return (
-        <div className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: '#FFFFFF'}}>
-            <a className="navbar-brand" href="#">Navbar</a>
+        <div className="navbar navbar-expand-lg navbar-light sticky-top bg-white shadow" style={{backgroundColor: '#FFFFFF', zIndex: '5000'}}>
+            <a className="navbar-brand" href="#">
+                {/*Logo*/}
+                <img src={JALogo} className="my-0" style={{width: '200px'}}/>
+            </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">

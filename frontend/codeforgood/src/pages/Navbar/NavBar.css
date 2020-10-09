@@ -1,0 +1,5 @@
+.logo-format {
+    /* ENSURE Logo is not stretched */
+    width: 23%;
+    margin: 5% auto 5% auto;
+}
