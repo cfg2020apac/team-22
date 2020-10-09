@@ -8,7 +8,6 @@ const NavBar = props => {
     return (
         <div className="navbar navbar-expand-lg navbar-light sticky-top bg-white shadow" style={{backgroundColor: '#FFFFFF', zIndex: '5000'}}>
             <a className="navbar-brand" href="#">
-                {/*Logo*/}
                 <img src={JALogo} className="my-0" style={{width: '200px'}}/>
             </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
