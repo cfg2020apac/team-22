@@ -1,8 +1,8 @@
 
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import ChartistGraph from "react-chartist";
 import { Grid, Row, Col } from "react-bootstrap";
-
+import axios from 'axios';
 import { Card } from "components/Card/Card.jsx";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 import { Tasks } from "components/Tasks/Tasks.jsx";
@@ -21,8 +21,87 @@ import {
   legendBar,
 } from "variables/Variables.jsx";
 
-function Dashboard(props){
-  const createLegend = (json) => {
+class Dashboard extends Component{
+  constructor(props) {
+		super(props);
+
+		this.state = {
+			todos: '',
+			title: '',
+			body: '',
+			todoId: '',
+			errors: [],
+			open: false,
+			uiLoading: true,
+			buttonType: '',
+			viewOpen: false
+		};
+
+		this.deleteTodoHandler = this.deleteTodoHandler.bind(this);
+		this.handleEditClickOpen = this.handleEditClickOpen.bind(this);
+		this.handleViewOpen = this.handleViewOpen.bind(this);
+	}
+
+	handleChange = (event) => {
+		this.setState({
+			[event.target.name]: event.target.value
+		});
+    };
+    
+    componentWillMount = () => {
+		const authToken = localStorage.getItem('AuthToken');
+		axios.defaults.headers.common = { Authorization: `${authToken}` };
+		axios
+			.get('/todos')
+			.then((response) => {
+				this.setState({
+					todos: response.data,
+					uiLoading: false
+        });
+        handleTranslateTodo(response.data);
+      })
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+    handleTranslateTodo = (data) => {
+      console.log(data);
+    
+    }
+    deleteTodoHandler(data) {
+		const authToken = localStorage.getItem('AuthToken');
+		axios.defaults.headers.common = { Authorization: `${authToken}` };
+		let todoId = data.todo.todoId;
+		axios
+			.delete(`todo/${todoId}`)
+			.then(() => {
+				window.location.reload();
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}
+
+	handleEditClickOpen(data) {
+		this.setState({
+			title: data.todo.title,
+			body: data.todo.body,
+			todoId: data.todo.todoId,
+			buttonType: 'Edit',
+			open: true
+		});
+    }
+    
+    handleViewOpen(data) {
+		this.setState({
+			title: data.todo.title,
+			body: data.todo.body,
+			viewOpen: true
+		});
+	}
+  
+
+ createLegend = (json) => {
     var legend = [];
     for (var i = 0; i < json["names"].length; i++) {
       var type = "fa fa-circle text-" + json["types"][i];
@@ -31,7 +110,7 @@ function Dashboard(props){
     }
     return legend;
   };
-  const data = {
+  data = {
     lanes: [
       {
         id: 'lane1',
@@ -63,12 +142,13 @@ function Dashboard(props){
       }
     ]
   }
+  
 
-
+  render(){
     return (
       <div className="content">
         <Grid fluid>
-          <Board style={{height: "80%"}} data={data}/>
+          <Board style={{height: "80%"}} data={this.data}/>
           <Card
                 id="chartPerformace"
                 title="Student Performace"
@@ -86,13 +166,14 @@ function Dashboard(props){
                   </div>
                 }
                 legend={
-                  <div className="legend">{createLegend(studentBar)}</div>
+                  <div className="legend">{this.createLegend(studentBar)}</div>
                 }
               />
         </Grid>
         
       </div>
     );
+              }
   }
 
 

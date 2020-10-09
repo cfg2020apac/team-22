@@ -5,8 +5,6 @@ import JALogo from './img/JALogo.png';
 import { BeatLoader } from 'react-spinners'
 //import { API_URL, fetchHeaders } from "../../utils/types";
 //api fetching tools once backend service set up
-import { LoginContext } from "../../context/LoginContext";
-//import { DashboardContext} from "../../context/DashboardContext";
 import { getToken, setToken } from "./handleToken";
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -17,7 +15,7 @@ const Login = props => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
-	const { loginSuccess, setLoginSuccess, handleConnectWA } = React.useContext(LoginContext)
+	const [loginSuccess, setLoginSuccess] = useState(false);
 	const handleLoginKeyPress = (event) => {
 		if(event.key === 'Enter'){
 			login()
