@@ -3,19 +3,16 @@ import React, {useState, useEffect} from "react";
 
 import { Button } from "react-bootstrap";
 import JALogo from './img/JALogo.png';
-// import { BeatLoader } from 'react-spinners'
-//api fetching tools once backend service set up
-//import { DashboardContext} from "../../context/DashboardContext";
-import { getToken, setToken } from "./handleToken";
-import {API_URL}from '../../consts/config';
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./Login.css";
-import { config } from "./handleToken";
 import axios from "axios"
+import { useHistory } from "react-router-dom";
+import { setToken } from "./handleToken";
 
 
 const Login = props => {
+	let history = useHistory();
 	const [isLoading, setIsLoading] = useState(false);
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
@@ -37,10 +34,12 @@ const Login = props => {
 		
 		try {
 			const result = await axios.post(endPoint, userData);
+			if (result.data.token){
 			const clientToken = result.data.token;
 			setToken(clientToken);
 			setLoginSuccess(true);
-			this.props.history.push("/admin/dashboard");
+			history.push("/");
+			}
 		} catch (error) {
 			console.error (error)
 		}

@@ -18,11 +18,13 @@
 	padding: 2rem 2rem;
 	align-self: center;
 }
+
 .login-logo {
 	/* ENSURE Logo is not stretched */
 	width: 23%;
 	margin: 5% auto 5% auto;
 }
+
 .login-title{
 	font-weight: 700;
 	font-size: 30px;

@@ -15,8 +15,29 @@ import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
 
 import avatar from "assets/img/faces/face-3.jpg";
+import axios from "axios";
+import {config} from "../pages/Login/handleToken.jsx"
 
 class UserProfile extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      userData : {
+        country: "",
+        email: "",
+        lastName:"",
+        phoneNumber:"",
+        username:""
+      }
+    }
+  }
+
+  async componentDidMount(){
+    let res = await axios.get('/user', config);
+    this.setState({
+      userData: res.data
+    })
+  }
   render() {
     return (
       <div className="content">
