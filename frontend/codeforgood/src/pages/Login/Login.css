@@ -57,7 +57,14 @@
 	font-weight:700;
 	cursor: pointer;
 }
-
+.login-sign-up {
+	color: #09a391;
+	font-size: 16px;
+	margin: 0px auto;
+	font-family: "Cabin";
+	font-weight:700;
+	cursor: pointer;
+}
 .loader {
 	display: flex;
 	flex-direction: column;
