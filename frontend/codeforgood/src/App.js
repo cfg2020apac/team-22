@@ -10,8 +10,7 @@ function App() {
   const {loginSuccess} = useContext(LoginContext);
   return (
     <div className="App">
-      {!loginSuccess ? <Login /> : <Dashboard />}
-      // <PostLogin />}
+      {loginSuccess ? <Login /> : <PostLogin />}
     </div>
   );
 }
