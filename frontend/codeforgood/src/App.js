@@ -1,24 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Login from './pages/Login/Login';
+import { LoginContext } from './context/LoginContext';
 
 function App() {
+  const {loginSuccess} = useContext(LoginContext);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!loginSuccess ? 
+      <Login />
+    :
+    <></>}
     </div>
   );
 }
