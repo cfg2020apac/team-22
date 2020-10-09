@@ -9,7 +9,6 @@ import Courses from "../Courses/Courses";
 const PostLogin = props => {
     return (
         <div className="postlogin-page">
-            <NavBar/>
             <Dashboard/>
             <Courses/>
         </div>

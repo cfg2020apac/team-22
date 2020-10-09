@@ -34,6 +34,7 @@ import {
   responsiveBar,
   legendBar
 } from "variables/Variables.jsx";
+import NavBar from "../pages/Navbar/NavBar";
 
 class Dashboard extends Component {
   createLegend(json) {

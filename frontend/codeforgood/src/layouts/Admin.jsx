@@ -29,6 +29,7 @@ import { style } from "variables/Variables.jsx";
 import routes from "routes.js";
 
 import image from "assets/img/sidebar-3.jpg";
+import NavBar from "../pages/Navbar/NavBar";
 
 class Admin extends Component {
   constructor(props) {
@@ -172,6 +173,7 @@ class Admin extends Component {
   render() {
     return (
       <div className="wrapper">
+        {/*<NavBar/>*/}
         <NotificationSystem ref="notificationSystem" style={style} />
         <Sidebar {...this.props} routes={routes} image={this.state.image}
         color={this.state.color}
