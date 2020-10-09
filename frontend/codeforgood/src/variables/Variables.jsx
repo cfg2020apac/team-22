@@ -531,11 +531,34 @@ var responsiveSales = [
   ]
 ];
 var legendSales = {
-  names: ["Open", "Click", "Click Second Time"],
+  names: ["Business", "School", "Individual"],
   types: ["info", "danger", "warning"]
 };
 
 // Data for Bar Chart
+var studentDataBar = {
+  labels :  [
+    "Nov",
+    "Dec",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mai",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+
+  ]
+  ,
+  series: [
+    [87,98,64,76,78,98,89,78,88,89,90,94],
+    [79,79,64,97,64,59,90,97,98,94,76,83],
+  ],
+  
+}
 var dataBar = {
   labels: [
     "Nov",
@@ -578,7 +601,11 @@ var responsiveBar = [
   ]
 ];
 var legendBar = {
-  names: ["Tesla Model S", "BMW 5 Series"],
+  names: ["Volunteers", "Participants"],
+  types: ["info", "danger"]
+};
+var studentBar = {
+  names: ["Class A", "Class B"],
   types: ["info", "danger"]
 };
 var courseTitle = {
@@ -606,6 +633,8 @@ module.exports = {
   dataBar,
   optionsBar,
   responsiveBar,
+  studentBar,
+  studentDataBar,
   legendBar, // For charts (Dashboard view)
   courseTitle
 };

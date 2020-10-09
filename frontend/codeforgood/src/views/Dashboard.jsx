@@ -7,7 +7,30 @@ import { Card } from "components/Card/Card.jsx";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
 import { Tasks } from "components/Tasks/Tasks.jsx";
 import Board from 'react-trello';
+import {
+  dataPie,
+  legendPie,
+  dataSales,
+  optionsSales,
+  responsiveSales,
+  legendSales,
+  studentBar,
+  studentDataBar,
+  optionsBar,
+  responsiveBar,
+  legendBar,
+} from "variables/Variables.jsx";
+
 function Dashboard(props){
+  const createLegend = (json) => {
+    var legend = [];
+    for (var i = 0; i < json["names"].length; i++) {
+      var type = "fa fa-circle text-" + json["types"][i];
+      legend.push(<div className={type} key={i} style={{display: "inline"}}>{json["names"][i]}</div>);
+      legend.push(" ");
+    }
+    return legend;
+  };
   const data = {
     lanes: [
       {
@@ -45,8 +68,29 @@ function Dashboard(props){
     return (
       <div className="content">
         <Grid fluid>
-          <Board data={data}/>
+          <Board style={{height: "80%"}} data={data}/>
+          <Card
+                id="chartPerformace"
+                title="Student Performace"
+                category="average scores of students from class A and B"
+                stats={"Retrieved at " + new Date().toDateString()}
+                statsIcon="fa fa-check"
+                content={
+                  <div className="ct-chart">
+                    <ChartistGraph
+                      data={studentDataBar}
+                      type="Line"
+                      options={optionsBar}
+                      responsiveOptions={responsiveBar}
+                    />
+                  </div>
+                }
+                legend={
+                  <div className="legend">{createLegend(studentBar)}</div>
+                }
+              />
         </Grid>
+        
       </div>
     );
   }

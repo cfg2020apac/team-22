@@ -7,9 +7,8 @@ import Courses from "views/Courses.jsx";
 import Icons from "views/Icons.jsx";
 import Maps from "views/Maps.jsx";
 import Notifications from "views/Notifications.jsx";
-import Upgrade from "views/Upgrade.jsx";
 import Badges from "views/Badges";
-
+import Submission from 'views/Submission';
 const dashboardRoutes = [
   {
     path: "/dashboard",
@@ -72,6 +71,13 @@ const dashboardRoutes = [
     name: "Notifications",
     icon: "pe-7s-bell",
     component: Notifications,
+    layout: "/admin"
+  },
+  {
+    path: "/submission",
+    name: "Submission",
+    icon: "pe-7s-notebook",
+    component: Submission,
     layout: "/admin"
   }
 ];

@@ -18,6 +18,9 @@ import { Grid, Row, Col, ProgressBar } from "react-bootstrap";
 import Card from "components/Card/Card.jsx";
 import {courseTitle} from '../variables/Variables';
 import courseLogo from '../assets/img/courses/courseLogo';
+import routes from "routes.js";
+import { Route, Switch } from "react-router-dom";
+import CourseDetail from './CourseDetail';
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -58,6 +61,23 @@ const useStyles = makeStyles((theme) => ({
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const courseProgress = [20,90,85,65,23,17,67,93,70];
+const getRoutes = (routes,index) => {
+  return routes.map((prop, key) => {
+    
+      return (
+        <Route
+          path={'/admin/courses/' + index}
+          render={props => (
+            <CourseDetail
+              {...props}
+            />
+          )}
+          key={key}
+        />
+      );
+    
+  });
+};
 function Courses (props){
   var classes = useStyles();
   const handleViewCourse = (e) => {
@@ -99,13 +119,17 @@ function Courses (props){
                   </CardContent>
                   <CardActions>
                     <Button size="large" color="primary">
-                      <div style={{fontSize: '1.5rem'}} onClick={handleViewCourse}>View</div>
+                      <Switch>
+                        {getRoutes(routes,index)}
+                        <div style={{fontSize: '1.5rem'}}>View</div>
+                      </Switch>
+                     
                     </Button>
                     <Button size="large" color="primary">
-                    <div style={{fontSize: '1.5rem'}} onClick={{handleEditCourse}}>Edit</div>
+                    <div style={{fontSize: '1.5rem'}} onClick={handleEditCourse}>Edit</div>
                     </Button>
                     <Button size="large" color="warning">
-                    <div style={{fontSize: '1.5rem'}} onClick={{handleDeleteCourse}}>Delete</div>
+                    <div style={{fontSize: '1.5rem'}} onClick={handleDeleteCourse}>Delete</div>
                     </Button>
 
                   </CardActions>
