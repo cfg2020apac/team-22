@@ -12,6 +12,7 @@ module.exports = {
                 return res.status(500).send(error);
             }
     },
+
     getAllCourses: async function(req, res, next){
         try{    
             let query = await db.collection('courses');
@@ -24,11 +25,11 @@ module.exports = {
                         id: doc.id,
                         name: doc.data().name,
                         instructor: doc.data().instructor,
-                        courseId: doc.data().course_id,
-                        startDate: doc.data().start_date,
-                        endDate: doc.data().end_date,
-                        maxSize: doc.data().max_size,
-                        tgLink: doc.data().tg_Link
+                        course_id: doc.data().course_id,
+                        start_date: doc.data().start_date,
+                        end_date: doc.data().end_date,
+                        max_size: doc.data().max_size,
+                        tg_Link: doc.data().tg_Link
                     }
                     courses.push(selectedItem);
                 }
@@ -52,7 +53,34 @@ module.exports = {
                 console.log(error);
                 return res.status(500).send(error);
         }
-    }
+    },
     
+    updateCourse: async function(req, res, next){
+        try{    
+            let query = await db.collection('courses').doc(req.params.id)
+                .update({
+                    ...req.body,
+                });
+            return res.status(200).send({
+                message: "success"
+            }); 
+        } catch (error){
+                console.log(error);
+                return res.status(500).send(error);
+        }
+    },
+
+    deleteCourse: async function(req, res, next){
+        try{    
+            let query = await db.collection('courses').doc(req.params.id)
+                .delete();
+            return res.status(200).send({
+                message: "success"
+            }); 
+        } catch (error){
+                console.log(error);
+                return res.status(500).send(error);
+        }
+    }
 
 }

@@ -24,7 +24,7 @@ module.exports = {
                         id: doc.id,
                         name: doc.data().name,
                         surname: doc.data().surname,
-                        contactPhone: doc.data().contact_phone,
+                        contact_phone: doc.data().contact_phone,
                         email: doc.data().email,
                         courses: doc.data().courses
                     }
@@ -56,9 +56,7 @@ module.exports = {
         try{    
             let query = await db.collection('students').doc(req.params.id)
                 .update({
-                    email: req.body.email,
-                    name: req.body.name,
-                    surname: req.body.surname
+                    ...req.body,
                 });
             return res.status(200).send({
                 message: "success"

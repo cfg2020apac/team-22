@@ -12,6 +12,7 @@ module.exports = {
                 return res.status(500).send(error);
             }
     },
+
     getAllTeachers: async function(req, res, next){
         try{    
             let query = db.collection('teachers');
@@ -23,7 +24,7 @@ module.exports = {
                         id: doc.id,
                         name: doc.data().name,
                         surname: doc.data().surname,
-                        contactPhone: doc.data().contact_phone,
+                        contact_phone: doc.data().contact_phone,
                         email: doc.data().email,
                         courses: doc.data().courses,
                         status: doc.data().status
@@ -37,6 +38,7 @@ module.exports = {
                     return res.status(500).json({ error: err.code});
                 };
     },
+
     createTeacher: async function(req, res, next){
         try{    
             let teacherId = uuid.v4();
@@ -49,6 +51,33 @@ module.exports = {
                 console.log(error);
                 return res.status(500).send(error);
         }
-    }
+    },
 
+    updateTeacher: async function(req, res, next){
+        try{
+            let query = await db.collection('teachers').doc(req.params.id)
+                .update({
+                    ...req.body,
+                });
+            return res.status(200).send({
+                message: "success"
+            }); 
+        } catch (error){
+                console.log(error);
+                return res.status(500).send(error);
+        }
+    },
+
+    deleteTeacher: async function(req, res, next){
+        try{    
+            let query = await db.collection('teachers').doc(req.params.id)
+                .delete();
+            return res.status(200).send({
+                message: "success"
+            }); 
+        } catch (error){
+                console.log(error);
+                return res.status(500).send(error);
+        }
+    }
 }
