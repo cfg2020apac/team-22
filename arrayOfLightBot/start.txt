@@ -1,0 +1,6 @@
+This the Telegram bot from JA Hong Kong.
+
+To start with:
+/promotion - learn more about the upcoming activties
+/showCourses - view the courses offered
+/end - end the service
