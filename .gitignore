@@ -5,3 +5,4 @@ Team*.zip
 *.key
 *.ovpn
 /node_modules/*
+package-lock.json

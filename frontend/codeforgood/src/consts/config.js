@@ -1,0 +1,1 @@
+export const API_URL = "https://us-central1-junior-achievement-app.cloudfunctions.net/api"
