@@ -17,9 +17,10 @@ import Login from "./pages/Login/Login";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
+    <Route path="/login" component={Login} />
       <Route path="/admin" render={props => <AdminLayout {...props} />} />
-      <Route path="/login" component={Login} />
-      <Redirect from="/" to="/admin/dashboard" />
+      
+      <Redirect from="/" to="/login" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

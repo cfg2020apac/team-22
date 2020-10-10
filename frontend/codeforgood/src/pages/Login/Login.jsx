@@ -38,7 +38,7 @@ const Login = props => {
 			const clientToken = result.data.token;
 			setToken(clientToken);
 			setLoginSuccess(true);
-			history.push("/");
+			history.push("/admin/dashboard");
 			}
 		} catch (error) {
 			console.error (error)
