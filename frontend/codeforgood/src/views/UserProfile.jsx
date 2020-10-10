@@ -15,9 +15,45 @@ import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
 
 import avatar from "assets/img/faces/face-3.jpg";
+import axios from "axios";
+import {config} from "../pages/Login/handleToken.jsx"
 
 class UserProfile extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      userData : {
+        firstName: "",
+        lastName:"",
+        email: "",
+        phoneNumber: "",
+        country: "",
+        password: "",
+        confirmPassword: "",
+        username: ""
+      }
+    }
+  }
+
+  async componentDidMount(){
+    await this.getUser();
+  }
+
+  async getUser(){
+    let res = await axios.get('/user', config);
+    this.setState({
+      userData: {...this.state.userData,...res.data.userCredentials}
+    })
+  }
+
+  async updateUserProfile(){
+    console.log(this.state.userData)
+    let res = await axios.post('/user', this.state.userData, config);
+    await this.getUser();
+  }
+
   render() {
+    var userData = this.state.userData;
     return (
       <div className="content">
         <Grid fluid>
@@ -35,7 +71,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Company",
-                          defaultValue: "Creative Code Inc.",
+                          value: "JPMorgan Chase & Co.",
                           disabled: true
                         },
                         {
@@ -43,13 +79,16 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Username",
-                          defaultValue: "michael23"
+                          defaultValue: userData.username,
+                          onChange: (e)=>{this.setState({username: e.target.value})}
                         },
                         {
                           label: "Email address",
                           type: "email",
                           bsClass: "form-control",
-                          placeholder: "Email"
+                          placeholder: "Email",
+                          defaultValue: userData.email,
+                          onChange: (e)=>{this.setState({email: e.target.value})}
                         }
                       ]}
                     />
@@ -61,14 +100,16 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "First name",
-                          defaultValue: "Mike"
+                          defaultValue: userData.firstName,
+                          onChange: (e)=>{this.setState({firstName: e.target.value})}
                         },
                         {
                           label: "Last name",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Last name",
-                          defaultValue: "Andrew"
+                          defaultValue: userData.lastName,
+                          onChange: (e)=>{this.setState({lastName: e.target.value})}
                         }
                       ]}
                     />
@@ -76,10 +117,10 @@ class UserProfile extends Component {
                       ncols={["col-md-12"]}
                       properties={[
                         {
-                          label: "Adress",
+                          label: "Address",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Home Adress",
+                          placeholder: "Home Address",
                           defaultValue:
                             "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
                         }
@@ -93,14 +134,15 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "City",
-                          defaultValue: "Mike"
+                          defaultValue: "Hong Kong"
                         },
                         {
                           label: "Country",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Country",
-                          defaultValue: "Andrew"
+                          defaultValue: userData.country,
+                          onChange: (e)=>{this.setState({country: e.target.value})}
                         },
                         {
                           label: "Postal Code",
@@ -120,12 +162,12 @@ class UserProfile extends Component {
                             componentClass="textarea"
                             bsClass="form-control"
                             placeholder="Here can be your description"
-                            defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
+                            defaultValue="Hi, This is Pavel! "
                           />
                         </FormGroup>
                       </Col>
                     </Row>
-                    <Button bsStyle="info" pullRight fill type="submit">
+                    <Button bsStyle="info" pullRight fill onClick={()=>this.updateUserProfile()}>
                       Update Profile
                     </Button>
                     <div className="clearfix" />
@@ -135,32 +177,19 @@ class UserProfile extends Component {
             </Col>
             <Col md={4}>
               <UserCard
-                bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
+              
+                bgImage="https://res.cloudinary.com/ideation/image/upload/w_870/cy7q9qguz4siocn9tdof.png?fit=crop&fm=jpg&h=300&q=75&w=400"
                 avatar={avatar}
-                name="Mike Andrew"
-                userName="michael24"
+                name={`${userData.firstName} ${userData.lastName}`}
+                userName={`${userData.username}`}
                 description={
                   <span>
-                    "Lamborghini Mercy
+                    "I am a guy who is passoniate about coding.
                     <br />
-                    Your chick she so thirsty
-                    <br />
-                    I'm in that two seat Lambo"
+                    Drop me a message to share your thoughts on coding!
                   </span>
                 }
-                socials={
-                  <div>
-                    <Button simple>
-                      <i className="fa fa-facebook-square" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-google-plus-square" />
-                    </Button>
-                  </div>
-                }
+                
               />
             </Col>
           </Row>

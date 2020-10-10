@@ -35,7 +35,7 @@ const dashboardRoutes = [
   },
   {
     path: "/user",
-    name: "User Profile (Backup)",
+    name: "User Profile",
     icon: "pe-7s-user",
     component: UserProfile,
     layout: "/admin"
@@ -59,27 +59,6 @@ const dashboardRoutes = [
     name: "Courses",
     icon: "pe-7s-news-paper",
     component: Courses,
-    layout: "/admin"
-  },
-  {
-    path: "/icons",
-    name: "Icons",
-    icon: "pe-7s-science",
-    component: Icons,
-    layout: "/admin"
-  },
-  {
-    path: "/maps",
-    name: "Maps",
-    icon: "pe-7s-map-marker",
-    component: Maps,
-    layout: "/admin"
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    icon: "pe-7s-bell",
-    component: Notifications,
     layout: "/admin"
   },
   {
